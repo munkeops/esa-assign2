@@ -18,11 +18,11 @@ var CartSchema = new Schema({
     },
 
     quantity: {
-    type: String,
+    type: Number,
     required: 'Kindly enter the available quantity'
     },
     amount: {
-    type: String,
+    type: Number,
     required: 'Kindly enter the price of the model'
     },
 

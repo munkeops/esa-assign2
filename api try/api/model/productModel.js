@@ -45,22 +45,22 @@ var ProductSchema = new Schema({
         required: 'Kindly enter the model of the product'
       },
     price: {
-    type: String,
+    type: Number,
     required: 'Kindly enter the price of the model'
     },
     availableQuantity: {
-        type: String,
+        type: Number,
         required: 'Kindly enter the available quantity'
       },
     
   });
 
-  ProductSchema.method('transform',function(){
-    var obj=this.toObject()
-    obj.productId=obj._id
-    delete obj._id
-    return obj
-  })
+  // ProductSchema.method('transform',function(){
+  //   var obj=this.toObject()
+  //   obj.productId=obj._id
+  //   delete obj._id
+  //   return obj
+  // })
 
 
 

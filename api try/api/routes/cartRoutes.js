@@ -1,3 +1,8 @@
+'use strict';
+
+
+module.exports = function(app) {
+
 var cart =require('../controllers/cartController')
 
 app.route('/cart')
@@ -7,3 +12,5 @@ app.route('/cart/:cartId')
 .get(cart.read_a_cartitem)
 .put(cart.update_a_cartitem)
 .delete(cart.delete_a_cartitem);
+
+};
