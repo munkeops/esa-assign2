@@ -27,6 +27,7 @@ var Schema = mongoose.Schema;
 
 
 var ProductSchema = new Schema({
+    
     productId: {
       type: String,
       required: 'Kindly enter the product-id'
@@ -53,6 +54,13 @@ var ProductSchema = new Schema({
       },
     
   });
+
+  ProductSchema.method('transform',function(){
+    var obj=this.toObject()
+    obj.productId=obj._id
+    delete obj._id
+    return obj
+  })
 
 
 
