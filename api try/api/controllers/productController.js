@@ -31,7 +31,7 @@ exports.create_a_product = function(req, res) {
 
 
 exports.read_a_product = function(req, res) {
-  Product.findById(req.params.productId, function(err, product) {
+  Product.find({productId:req.params.productId}, function(err, product) {
     if (err)
       res.send(err);
     res.json(product);
@@ -40,7 +40,7 @@ exports.read_a_product = function(req, res) {
 
 
 exports.update_a_product = function(req, res) {
-  Product.findOneAndUpdate({_id: req.params.productId}, req.body, {new: true}, function(err, product) {
+  Product.findOneAndUpdate({productId: req.params.productId}, req.body, {new: true}, function(err, product) {
     if (err)
       res.send(err);
     res.json(product);

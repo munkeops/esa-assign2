@@ -25,6 +25,10 @@ var CartSchema = new Schema({
     type: Number,
     required: 'Kindly enter the price of the model'
     },
+    username:{
+        type:String,
+        required:"username is missing"
+    }
 
 
 });

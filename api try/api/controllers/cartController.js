@@ -8,7 +8,7 @@ CartItem = mongoose.model('Cart');
 
 
 exports.list_all_cartitems = function(req, res) {
-    CartItem.find({}, function(err, product) {
+    CartItem.find({username:req.params.username}, function(err, product) {
       if (err)
         res.send(err);
       res.json(product);
@@ -19,17 +19,17 @@ exports.list_all_cartitems = function(req, res) {
   
   
   exports.create_a_cartitem = function(req, res) {
-    var new_product = new CartItem(req.body);
-    new_product.save(function(err, product) {
+    var new_cartItem = new CartItem(req.body);
+    new_cartItem.save(function(err, cartItem) {
       if (err)
         res.send(err);
-      res.json(product);
+      res.json(cartItem);
     });
   };
 
   
 exports.read_a_cartitem = function(req, res) {
-    Product.findById(req.params.productId, function(err, product) {
+    CartItem.find({productId:req.params.productId,username:req.params.username}, function(err, product) {
       if (err)
         res.send(err);
       res.json(product);
@@ -38,7 +38,7 @@ exports.read_a_cartitem = function(req, res) {
   
   
   exports.update_a_cartitem = function(req, res) {
-    Product.findOneAndUpdate({_id: req.params.productId}, req.body, {new: true}, function(err, product) {
+    CartItem.findOneAndUpdate({productId: req.params.productId,username:req.params.username}, req.body, {new: true}, function(err, product) {
       if (err)
         res.send(err);
       res.json(product);
@@ -49,8 +49,9 @@ exports.read_a_cartitem = function(req, res) {
   exports.delete_a_cartitem = function(req, res) {
   
   
-    Product.remove({
-      _id: req.params.productId
+    CartItem.remove({
+      productId: req.params.productId,
+      username:req.params.username
     }, function(err, product) {
       if (err)
         res.send(err);
