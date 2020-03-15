@@ -9,13 +9,9 @@ The project basically is creating a simple online shopping cart platform using m
 
 Download the folder esa-assign2. it will have a folder and a python script. On terminal/command-line navigate into the api folder and npm start to run the server. then open a fresh terminal and execute the python script. The python script acts as driver function for the client to interact with the microservice apis . It has functions which can be used by the user as a method of invoking a service from the microservice, which in turn triggers a series of api calls.
 
-### Prerequisites
 
-You could also use postman as a method to invoke calls if more comfortablw with it. 
 
-```
-Give examples
-```
+
 ## Basic api structure
 
 DATABASES:<br>
