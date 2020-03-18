@@ -1,3 +1,13 @@
+"""
+auth - Function that authorizes the current user with every request
+quantityOf - Function to check if the product item is available
+updateProducts - Function updates inventory based on number of items put into the cart
+addtocart - Function adds product as given by user to the his designated cart
+viewcart - Function displays all cart items of the requesting user
+
+"""
+
+
 # importing the requests library 
 import requests
 from pprint import pprint 
@@ -122,8 +132,11 @@ def viewcart(username,):
 
 
 
-    
+# DRIVER CODE
 
+
+    
+# default user created already
 addtocart("rohan9025","1",1)
 addtocart("rohan9025","2",1)
 viewcart("rohan9025")
