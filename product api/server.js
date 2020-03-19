@@ -8,9 +8,10 @@ var express = require('express'),
   
 // mongoose instance connection url connection
 // mongoose.Promise = global.Promise;
-const string2='mongodb+srv://rohan9025:Susan@9025@cluster0-amyhz.mongodb.net/test?retryWrites=true&w=majority'
-// const string1='mongodb+srv://rohan9025:Susan@9025@cluster0-amyhz.mongodb.net/test?retryWrites=true&w=majority'
-mongoose.connect(string2,{useNewUrlParser:true,useUnifiedTopology: true,useCreateIndex: true,useFindAndModify:false}); 
+
+
+const string1=" "// add your database string here
+mongoose.connect(string1,{useNewUrlParser:true,useUnifiedTopology: true,useCreateIndex: true,useFindAndModify:false}); 
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
