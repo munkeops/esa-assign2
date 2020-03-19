@@ -12,7 +12,7 @@ var express = require('express'),
 
 
 const string1=" "// add your database string here
-mongoose.connect(string2,{useNewUrlParser:true,useUnifiedTopology: true,useCreateIndex: true,useFindAndModify:false}); 
+mongoose.connect(string1,{useNewUrlParser:true,useUnifiedTopology: true,useCreateIndex: true,useFindAndModify:false}); 
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
