@@ -18,7 +18,7 @@ DATABASES:<br>
 2) Products<br>
 3) Cart<br>
 
-PROJECTS:<br>
+API FOLDERS:<br>
 1) controllers <br>
 2) routes <br>
 3) models <br>
@@ -46,7 +46,9 @@ a server.js file to set up and run the server
 │   ├── package-lock.json
 │   ├── package.json
 │   └── server.js
-└── UserMicroservice.py
+├── UserMicroservice.py
+└── productMicroservice.py
+
 
 6 directories, 13 files
 ```
@@ -88,11 +90,19 @@ Running the userMicroservice code -essentially acts as a client to the api
 ```
 ~esa-assign2/>python userMicroservice.py
 ```
+
+Running the productMicroservice code -essentially acts as a store attendent to the api
+
+```
+~esa-assign2/>python productMicroservice.py
+```
 Note: the microservice files have their own instructions within the code. 
 
 ## Running the tests
 
 The userMicroservice python script has a set of functions created and can be called by the user to view/add/ remove data at any instant. Modify the script to create flow of data and test the microservice. 
+
+The productMicroservice python script (has no code yet but can me made using the requests module in python OR we can use apps such as postman to make restful requests) is used to add/update inventory.
 
 The python scripts are well documented with each function and their use.
 

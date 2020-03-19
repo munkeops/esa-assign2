@@ -28,7 +28,7 @@ def auth(username):
   
 
 def quantityOf(productId):
-    URL = "http://localhost:4000/rest/v1/product/"+productId
+    URL = "http://localhost:3000/rest/v1/product/"+productId
     r = requests.get(url = URL)
     data=r.json()
     #data=json.load(data)
@@ -44,7 +44,7 @@ def quantityOf(productId):
     pprint(data)
 
 def updateProducts(productId,quant):
-    URL = "http://localhost:4000/rest/v1/product/"+productId
+    URL = "http://localhost:3000/rest/v1/product/"+productId
     r=requests.get(url=URL)
     data=r.json()
     pprint(data[0])
@@ -74,7 +74,7 @@ def addtocart(username,productId,quant):
         print("only "+avqaunt+" available, adding all to cart")
         quant=avqaunt
 
-    URL="http://localhost:4000/rest/v1/product/"+productId
+    URL="http://localhost:3000/rest/v1/product/"+productId
     r=requests.get(url=URL)
     data=r.json()
     pprint(data)
