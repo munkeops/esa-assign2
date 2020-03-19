@@ -3,14 +3,13 @@
 
 # Esa-Assign2
 
-The project basically is creating a simple online shopping cart platform using microservice linked via apis made in Node.Js. The major roles are the products available and the user interacting with the microservice. The user can add/remove items based on the availibility of the product. 
+The project basically is creating a simple online shopping cart platform int the form of microservices linked via apis made in Node.Js. The major roles are the products available and the user interacting with the microservices. 
+
+This project has two microservices. The first microservice interacts with the user (assuming they have logged in and are valid users). The second microservice interacts with the people running the e-commerce site. They can add/update inventory as per the available stock.
 
 ## Getting Started
 
-Download the folder esa-assign2. it will have a folder and a python script. On terminal/command-line navigate into the api folder and npm start to run the server. then open a fresh terminal and execute the python script. The python script acts as driver function for the client to interact with the microservice apis . It has functions which can be used by the user as a method of invoking a service from the microservice, which in turn triggers a series of api calls.
-
-
-
+Download/fork+clone the folder esa-assign2. It will have a folder(api try) and two python scripts.
 
 ## Basic api structure
 
@@ -47,10 +46,16 @@ a server.js file to set up and run the server
 │   ├── package-lock.json
 │   ├── package.json
 │   └── server.js
-└── driver.py
+└── UserMicroservice.py
 
 6 directories, 13 files
 ```
+
+
+## Setting up
+
+The node js code is designed to run on a mongodb atlas server. Please head to the server.js file and add a connection string to connect to a mongo database.
+
 
 ### Installing
 
@@ -78,22 +83,27 @@ todo list RESTful API server started on: 4000
 
 ```
 
-Running the driver code -essentially acts as a client to the api
+Running the userMicroservice code -essentially acts as a client to the api
 
 ```
-~esa-assign2/>python driver.py
+~esa-assign2/>python userMicroservice.py
 ```
+Note: the microservice files have their own instructions within the code. 
 
 ## Running the tests
 
-The python script has a set of functions created and can be called by the user to view/add/ remove data at any instant. Modify the script to create flow of data and test the microservice. The python script is well documented with each function and its inputs.
+The userMicroservice python script has a set of functions created and can be called by the user to view/add/ remove data at any instant. Modify the script to create flow of data and test the microservice. 
+
+The python scripts are well documented with each function and their use.
+
+
 
 
 ## Built With
 
-* [Node.Js](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [MongoDb Atlas](https://maven.apache.org/) - Database Management
-* [Python](https://rometools.github.io/rome/) - Microservice script
+* [Node.Js](https://nodejs.org/en/) - The web framework used
+* [MongoDb Atlas](https://www.mongodb.com/cloud/atlas) - Database Management
+* [Python](https://www.python.org/) - Microservice script
 
 
 ## Authors
