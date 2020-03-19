@@ -9,7 +9,7 @@ This project has two microservices. The first microservice interacts with the us
 
 ## Getting Started
 
-Download/fork+clone the folder esa-assign2. It will have a folder(api try) and two python scripts.
+Download/fork+clone the folder esa-assign2. It will have 2 folders(product api and user api) and two python scripts.
 
 ## Basic api structure
 
@@ -23,12 +23,26 @@ API FOLDERS:<br>
 2) routes <br>
 3) models <br>
 
-a server.js file to set up and run the server
+server.js files to set up and run the server
 
 ```
 ~esa-assign2>tree --filelimit 6
-.
-├── api try
+..
+├── README.md
+├── product api
+│   ├── api
+│   │   ├── controllers
+│   │   │   └── productController.js
+│   │   ├── model
+│   │   │   └── productModel.js
+│   │   └── routes
+│   │       └── productRoutes.js
+│   ├── node_modules [149 entries exceeds filelimit, not opening dir]
+│   ├── package-lock.json
+│   ├── package.json
+│   └── server.js
+├── productMicroservice.py
+├── user api
 │   ├── api
 │   │   ├── controllers
 │   │   │   ├── cartController.js
@@ -46,8 +60,7 @@ a server.js file to set up and run the server
 │   ├── package-lock.json
 │   ├── package.json
 │   └── server.js
-├── UserMicroservice.py
-└── productMicroservice.py
+└── userMicroservice.py
 
 
 6 directories, 13 files
@@ -56,7 +69,7 @@ a server.js file to set up and run the server
 
 ## Setting up
 
-The node js code is designed to run on a mongodb atlas server. Please head to the server.js file and add a connection string to connect to a mongo database.
+The node js code is designed to run in integration with a mongodb atlas server. Please head to the server.js file and add a connection string to connect to a mongo database.
 
 
 ### Installing
@@ -66,14 +79,13 @@ A step by step series of examples that tell you how to get the server and client
 Running the server
 
 ```
-~esa-assign2/api-try>npm start
+~esa-assign2/user api>npm start
 ```
-
 
 Output :
 
 ```
-> api-try@1.0.0 start ~\esa-assign2\api try
+> api-try@1.0.0 start ~\esa-assign2\user api
 > nodemon server.js
 
 [nodemon] 2.0.2
@@ -81,11 +93,32 @@ Output :
 [nodemon] watching dir(s): *.*
 [nodemon] watching extensions: js,mjs,json
 [nodemon] starting `node server.js`
-todo list RESTful API server started on: 4000
+shopping cart RESTful API server started on: 4000
 
 ```
 
+new term:
+
+```
+~esa-assign2/product api>npm start
+```
+OUPUT: 
+
+```
+> product-api@1.0.0 start ~esa-assign2\product api
+> nodemon server.js
+
+[nodemon] 2.0.2
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching dir(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+Product RESTful API server started on: 3000
+```
+
 Running the userMicroservice code -essentially acts as a client to the api
+
+new term:
 
 ```
 ~esa-assign2/>python userMicroservice.py
@@ -93,10 +126,12 @@ Running the userMicroservice code -essentially acts as a client to the api
 
 Running the productMicroservice code -essentially acts as a store attendent to the api
 
+new term:
+
 ```
 ~esa-assign2/>python productMicroservice.py
 ```
-Note: the microservice files have their own instructions within the code. 
+Note: the microservice.py files have their own instructions within the code. 
 
 ## Running the tests
 
