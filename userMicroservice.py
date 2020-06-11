@@ -137,8 +137,8 @@ def viewcart(username,):
 
     
 # default user created already
-addtocart("rohan9025","1",1)
-addtocart("rohan9025","2",1)
+addtocart("rohan9025","1",1) #username.product id, quantity
+addtocart("rohan9025","2",1) #username.product id, quantity
 viewcart("rohan9025")
 
 

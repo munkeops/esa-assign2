@@ -9,9 +9,19 @@ CartItem = mongoose.model('Cart');
 
 exports.list_all_cartitems = function(req, res) {
     CartItem.find({username:req.params.username}, function(err, product) {
-      if (err)
+      if (err){
         res.send(err);
-      res.json(product);
+      }
+      if(product.length==0){
+        res.status(404)
+        res.json({message:"no such user"})
+      }
+      else{
+        res.json(product)
+      }
+      // console.log(product)
+        
+
     });
   };
   
